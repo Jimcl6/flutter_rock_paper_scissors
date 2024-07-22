@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
+import 'package:google_fonts/google_fonts.dart';
 
 class PlayerScreen extends StatefulWidget {
   const PlayerScreen({super.key});
@@ -32,7 +33,7 @@ class _PlayerScreenState extends State<PlayerScreen> {
           (playerOne == 3 && playerTwo == 1)) {
         score = "Player One Wins!";
       } else {
-        score = "Player 2 Wins!";
+        score = "Player Two Wins!";
       }
     });
   }
@@ -45,7 +46,8 @@ class _PlayerScreenState extends State<PlayerScreen> {
         children: [
           Text(
             score,
-            style: const TextStyle(color: Colors.white, fontSize: 20),
+            style: GoogleFonts.pacifico(
+                textStyle: const TextStyle(color: Colors.white, fontSize: 40)),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -55,14 +57,17 @@ class _PlayerScreenState extends State<PlayerScreen> {
               Expanded(child: Image.asset("images/image_$playerTwo.png")),
             ],
           ),
-          TextButton(
-              onPressed: () {
-                decisionMaker();
-              },
-              child: const Text(
-                "Play Game!",
-                style: TextStyle(color: Colors.white, fontSize: 20),
-              ))
+          ElevatedButton(
+            onPressed: () {
+              decisionMaker();
+            },
+            child: Text(
+              "Play Game!",
+              style: GoogleFonts.kalnia(
+                  textStyle: TextStyle(color: Colors.purple.shade800),
+                  fontSize: 20),
+            ),
+          )
         ],
       ),
     );
