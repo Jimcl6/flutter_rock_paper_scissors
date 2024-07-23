@@ -2,7 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:rock_paper_scissors/players.dart';
 
 class MainBody extends StatelessWidget {
-  const MainBody({super.key});
+  MainBody({super.key});
+
+  var colorList = [
+    Colors.cyanAccent,
+    Colors.purpleAccent,
+    Colors.deepPurple.shade900
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -13,11 +19,7 @@ class MainBody extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [
-              Colors.cyanAccent,
-              Colors.purpleAccent,
-              Colors.deepPurple.shade900
-            ],
+            colors: colorList,
           ),
         ),
         child: const Scaffold(
